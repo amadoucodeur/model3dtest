@@ -1,0 +1,14 @@
+{% extends 'base.html' %} {% block content %}
+
+<h2>Les Models 3D </h2>
+<a href="{% url 'home' %}"> retoure  </a> <br>
+<hr>
+<h3> {{ model3d.title }} </h3>
+<img src="{{ model3d.image.url }}" alt="{{ model3d.title }}" style=" max-width: 300px;">
+<p>{{ model3d.description }}</p>
+<p>Proprietaire: {{ model3d.user.username }}</p>
+<p>date: {{ model3d.date }}</p>
+<p>Views: ({{ model3d.views }})</p>
+<a href="{% url 'model-update' id=model3d.id %}"> Update  </a>
+
+{% endblock %}

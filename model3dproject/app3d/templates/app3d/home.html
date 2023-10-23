@@ -1,0 +1,12 @@
+{% extends 'base.html' %} {% block content %}
+
+<h2>Les Models 3D </h2>
+
+{% for model3d in models3d %}
+<hr>
+<h3> {{ model3d.title }} </h3>
+<p>Views:({{ model3d.views }})</p>
+<a href="{% url 'detail' id=model3d.id %}">Voire</a>
+{% endfor %}
+
+{% endblock %}

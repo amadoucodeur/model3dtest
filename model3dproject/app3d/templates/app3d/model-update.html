@@ -1,0 +1,15 @@
+{% extends 'base.html' %} {% block content %}
+
+<h2> Mise à jour du model: {{ model3d.title }}  </h2>
+
+<hr />
+<form method="POST">
+    {% csrf_token %}
+    <input name="title" type="text" placeholder="Entrez le titre..." value="{{ model3d.title }}"/> <br>
+    <img src="{{ model3d.image.url }}" alt="{{ model3d.title }}" style="max-width: 300px;" /><br>
+    <input type="file" id="image" name="image" accept="image/*" /><br>
+    <textarea name="description" cols="30" rows="10">{{ model3d.description }}</textarea> <br>
+  <button type="submit"> Mettre à jour </button>
+</form>
+
+{% endblock %}
