@@ -1,0 +1,55 @@
+# Fichiers générés par l'environnement virtuel
+venv/
+__pycache__/
+
+# Fichiers de configuration spécifiques à votre éditeur ou IDE (par exemple, VSCode, PyCharm, etc.)
+.vscode/
+
+
+# Fichiers de base de données (SQLite)
+db.sqlite3
+
+# Fichiers de cache (générés par Django)
+__pycache__/__init__.pyc
+__pycache__/settings.cpython-3*.pyc
+
+# Logs
+log/
+*.log
+
+# Fichiers de médias téléchargés
+media/
+
+# Dossiers générés par Django
+staticfiles/
+migrations/
+__pycache__/migrations/
+
+# Fichiers locaux de configuration
+local_settings.py
+
+# Fichiers de clés secrètes et de sensibilité
+*.key
+
+# Fichiers de sauvegarde de base de données (par exemple, dump de PostgreSQL)
+*.dump
+*.sql
+
+# Les fichiers .pyc (Python bytecode) générés par Python
+__pycache__/
+*.pyc
+
+# Fichiers de test (générés par Django)
+*.test
+
+# Fichiers de production
+.env
+
+# Dossier de distribution Python (généré par `python setup.py sdist`)
+dist/
+
+# Dossier de construction Python (généré par `python setup.py bdist`)
+build/
+
+# Dossier de cache Python (généré par `python setup.py egg-info`)
+*.egg-info/
