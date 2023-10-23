@@ -17,6 +17,15 @@ def detail(request, id):
 
 def model_update(request, id):
     model3d = get_object_or_404(Model3d, id=id)
+
+    # if request.method == "POST":
+    #     form = Model3dForm(request.POST, request.FILES, instance=model3d)
+    #     if form.is_valid():
+    #         form.save()  # Enregistrez les modifications dans la base de données
+    #         return redirect("home")  # Redirigez vers la page d'accueil ou une autre page
+
+    # else:
+    #     form = Model3dForm(instance=model3d)
     return render(request, "app3d/model-update.html", context={"model3d": model3d})
 
 
@@ -44,3 +53,28 @@ def user_login(request):
             return redirect("home")
     return render(request, "app3d/login.html")
 
+
+
+
+
+
+
+# from django.shortcuts import render, redirect, get_object_or_404
+# from .forms import Model3dForm  # Assurez-vous d'importer le bon formulaire depuis votre application
+
+# def model_update(request, id):
+#     model3d = get_object_or_404(Model3d, id=id)
+    
+#     if request.method == "POST":
+#         form = Model3dForm(request.POST, request.FILES, instance=model3d)
+#         if form.is_valid():
+#             # Modifiez les champs qui ne sont pas dans le formulaire ici
+#             model3d.champ1 = "Nouvelle valeur pour champ1"
+#             model3d.champ2 = "Nouvelle valeur pour champ2"
+#             # Enregistrez les modifications dans la base de données
+#             model3d.save()
+#             return redirect("home")  # Redirigez vers la page d'accueil ou une autre page
+
+#     else:
+#         form = Model3dForm(instance=model3d)
+#     return render(request, "app3d/model-update.html", context={"model3d": model3d})
