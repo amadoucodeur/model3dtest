@@ -1,26 +1,27 @@
-"""model3dproject URL Configuration
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.1/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
 from django.urls import path
-from .views import home, detail, user_signup, user_logout, user_login, model_update
+from .views import (
+    home,
+    detail,
+    user_signup,
+    user_logout,
+    user_login,
+    model_update,
+    model_add,
+    model_delete,
+    user_badges_api,
+)
+
+# app_name = 'app3d'
 
 urlpatterns = [
     path("",home, name="home"),
     path("<int:id>/",detail, name="detail"),
     path("<int:id>/update/", model_update, name="model-update"),
+    path("add/", model_add, name="model-add"),
+    path("delete/<int:id>/", model_delete, name="model-delete"),
     path("signup/",user_signup, name="signup"),
     path("logout/",user_logout, name="logout"),
     path("login/",user_login, name="login"),
+    path('api/user_badges/<str:username>/', user_badges_api, name='user-badges-api'),
+
 ]

@@ -2,8 +2,14 @@
 
 <h2>Les Models 3D </h2>
 
+{% if user.is_authenticated %}
+    <a href="{% url 'model-add' %}">Ajoutez un model</a>
+{% endif %}
+
 {% for model3d in models3d %}
 <hr>
+
+
 <h3> {{ model3d.title }} </h3>
 <p>Views:({{ model3d.views }})</p>
 <a href="{% url 'detail' id=model3d.id %}">Voire</a>

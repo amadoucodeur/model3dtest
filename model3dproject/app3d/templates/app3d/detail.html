@@ -6,9 +6,24 @@
 <h3> {{ model3d.title }} </h3>
 <img src="{{ model3d.image.url }}" alt="{{ model3d.title }}" style=" max-width: 300px;">
 <p>{{ model3d.description }}</p>
-<p>Proprietaire: {{ model3d.user.username }}</p>
+<p>
+    Propriétaire: {{ model3d.user.username }}, 
+     <a href="{% url 'user-badges-api' username=model3d.user.username %}"> son api des badge </a>
+    {% if model3d.user.badges.all %}
+        Badges: (
+            {% for badge in model3d.user.badges.all %}
+                {{ badge.name }},
+            {% endfor %}
+        )
+    {% endif %}
+</p>
+
 <p>date: {{ model3d.date }}</p>
 <p>Views: ({{ model3d.views }})</p>
-<a href="{% url 'model-update' id=model3d.id %}"> Update  </a>
+
+{% if user.is_authenticated and user == model3d.user %}
+    <a href="{% url 'model-update' id=model3d.id %}"> Metre à jour </a><br>
+    <a href="{% url 'model-delete' id=model3d.id %}"> Suprimer </a>
+{% endif %}
 
 {% endblock %}
