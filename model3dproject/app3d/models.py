@@ -5,13 +5,7 @@ from django.db.models.signals import pre_save
 from django.dispatch import receiver
 
 
-
-
 # Create your models here.
-
-
-
-
 class Badge(models.Model):
     name = models.CharField(max_length=123, unique=True)
     description = models.TextField()
