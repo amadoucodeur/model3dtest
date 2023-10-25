@@ -1,11 +1,11 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Model3d, Badge, CustomUser
+from .models import Model3d, Badge
 from django.contrib.auth import get_user_model, login, logout, authenticate
 from .forms import Model3dForm
 from django.db.models import F
 from django.http import JsonResponse
 
-
+User = get_user_model()
 # Create your views here.
 
 def home(request):
@@ -96,7 +96,7 @@ def user_login(request):
 
 
 def user_badges_api(request, username):
-    user = get_object_or_404(CustomUser, username=username)
+    user = get_object_or_404(User, username=username)
     badges = user.badges.all()
     badge_data = [{'name': badge.name, 'description': badge.description} for badge in badges]
 

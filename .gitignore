@@ -2,7 +2,6 @@
 venv/
 __pycache__/
 
-# Fichiers de configuration spécifiques à votre éditeur ou IDE (par exemple, VSCode, PyCharm, etc.)
 .vscode/
 
 
@@ -22,17 +21,10 @@ media/
 
 # Dossiers générés par Django
 staticfiles/
-migrations/
 __pycache__/migrations/
 
-# Fichiers locaux de configuration
-local_settings.py
-
-# Fichiers de clés secrètes et de sensibilité
-*.key
 
 # Fichiers de sauvegarde de base de données (par exemple, dump de PostgreSQL)
-*.dump
 *.sql
 
 # Les fichiers .pyc (Python bytecode) générés par Python
